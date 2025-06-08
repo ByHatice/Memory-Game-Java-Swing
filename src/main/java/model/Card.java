@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Card {
     private final String suit;
-    private final String rank;
+    private final String value;
 
-    public Card(String suit, String rank) {
+    public Card(String suit, String value) {
         this.suit = suit;
-        this.rank = rank;
+        this.value = value;
     }
 
     public String getSuit() {
@@ -17,24 +17,23 @@ public class Card {
     }
 
     public String getRank() {
-        return rank;
+        return value;
     }
 
     public String getName() {
-        return rank + "_of_" + suit;
+        return value + suit;
     }
 
     public static List<Card> createDeck() {
-        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
-        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
+        String[] suits = {"H", "D", "C", "S"};
+        String[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
         List<Card> deck = new ArrayList<>();
 
         for (String suit : suits) {
-            for (String rank : ranks) {
-                deck.add(new Card(suit, rank));
+            for (String value : values) {
+                deck.add(new Card(suit, value));
             }
         }
-
         return deck;
     }
 }
