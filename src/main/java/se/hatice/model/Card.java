@@ -1,4 +1,4 @@
-package com.example.model;
+package se.hatice.model;
 
 public class Card {
     private final String cardName;
